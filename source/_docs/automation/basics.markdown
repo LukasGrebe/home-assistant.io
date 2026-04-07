@@ -81,7 +81,7 @@ Now that you've got a sneak peek of what is possible, it's time to get your feet
 
 {% include integrations/labs_entity_triggers_note.md %}
 
-After enabling the automation preview features in Labs, you can create an automation by following the steps below.
+After enabling the automation preview features in Labs, you can create an automation in the visual editor of the UI by following the steps below.
 
 #### Adding a trigger
 
@@ -89,28 +89,63 @@ After enabling the automation preview features in Labs, you can create an automa
 2. In the lower right corner, select **Create automation** > **Create new automation**.
 3. In the **When** section, select **Add trigger**.
 4. Now you can do one of the following:
-    - _Select a target and then a trigger._
-      - Under **By target**, select the entity, device or service to which you want to apply the trigger to. You can find the available entities, devices or services listed by:
-        - Area of your home, in the **Home** section.
-        - **Entities**, **Devices** and **Services**, in the **Unassigned** section.
-        - Labels that you have previously created, in the **Labels** section.
-      - For that target, you can see the available triggers on the right side. Select **+** on the desired one.
-    - _Select a trigger._
-      - Select **By type**, and then select the trigger type from the list on the left.
-      - From the listed triggers, select the **+** on the one you choose.
-    - _Search for a trigger or target and then select a trigger._
-      - Enter the name of one of the following in the search box:
-        - A target: an entity, a device or a service.
-        - A group of targets: an area or label.
-        - A trigger.
-      - From the listed results, select **+** on the desired trigger.
-5. In the window on the right, you will have different options depending on the selected trigger. You may find the following ones, for example.
-   - Under **Targets**, you can select **Add target** and:
+   - _Select a target and then a trigger._
+     - Under **By target**, select the entity, device or service to which you want to apply the trigger to. You can find the available entities, devices or services listed by:
+       - Area of your home, in the **Home** section.
+       - **Entities**, **Devices** and **Services**, in the **Unassigned** section.
+       - Labels that you have previously created, in the **Labels** section.
+     - For that target, you can see the available triggers on the right side. Select **+** on the desired one.
+   - _Select a trigger._
+     - Select **By type**, and then select the trigger type from the list on the left.
+     - From the listed triggers, select the **+** on the one you choose.
+   - _Search for a trigger or target and then select a trigger._
+     - Enter the name of one of the following in the search box:
+       - A target: an entity, a device or a service.
+       - A group of targets: an area or label.
+       - A trigger.
+     - From the listed results, select **+** on the desired trigger.
+5. In the window on the right, you will have different options depending on the selected trigger. You may find the following ones, for example:
+   - Under **Targets**, you can select the first target or another one by selecting **Add target**.
      - Select an entity, device or service to monitor a specific one.
      - Select entities, devices or services in an area, floor or with a certain label to monitor a group of them.
      - You can add more than one target by selecting **Add target** again.
-   - Under **Behavior**, you can select how the automation starts:
+   - Under **Behavior**, you can decide how the automation starts by selecting one of the options there.
      - **First**: if monitoring multiple targets, the automation only fires on the first time the trigger is verified for a target.
      - **Last**: if monitoring multiple targets, the automation only fires after the trigger is verified for all targets.
      - **Any**: the automation fires whenever a trigger of a monitored target is verified.
 6. Select **Save**.
+
+#### Adding a condition
+
+Note that you don´t need to add a condition to create an automation.
+
+1. Go to **Settings** > **Automations & scenes**.
+2. In the lower right corner, select **Create automation** > **Create new automation**.
+3. In the **When** section, select **Add condition**.
+4. Under **Blocks**, you have the following options:
+   - If you want to make sure that a condition is not verified for the automation to run, select  **+** on the **Not** block.
+   - If you will add more than one condition, you can select:
+     - the **And** block to make sure all conditions are verified for the automation to run.
+     - the **Or** block to make sure at least one of the conditions is verified for the automation to run.
+5. Select **Add condition** again and now you can:
+   - _Select a target and then a condition._
+     - Under **By target**, select the entity, device or service to which you want to apply the condition to. You can find the available entities, devices or services listed by:
+       - Area of your home, in the **Home** section.
+       - **Entities**, **Devices** and **Services**, in the **Unassigned** section.
+       - Labels that you have previously created, in the **Labels** section.
+     - For that target, you can see the available conditions on the right side. Select **+** on the desired one.
+   - _Select a condition._
+     - Select **By type**, and then select the condition type from the list on the left.
+     - From the listed conditions, select the **+** on the one you choose.
+   - _Search for a condition or target and then select a condition._
+     - Enter the name of one of the following in the search box:
+       - A target: an entity, a device or a service.
+       - A group of targets: an area or label.
+       - A condition.
+     - From the listed results, select **+** on the desired condition.
+6. In the window on the right, you will have different options depending on the selected condition.
+   - Under **By target**, you can select the first target or another one by selecting **Add target**.
+     - Select an entity, device or service to monitor a specific one.
+     - Select entities, devices or services in an area, floor or with a certain label to monitor a group of them.
+     - You can add another target by selecting **Add target** again.
+7. Select **Save**.
