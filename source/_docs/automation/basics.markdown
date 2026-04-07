@@ -122,7 +122,7 @@ Note that you don´t need to add a condition to create an automation.
 
 1. Go to **Settings** > **Automations & scenes**.
 2. In the lower right corner, select **Create automation** > **Create new automation**.
-3. In the **When** section, select **Add condition**.
+3. In the **And if** section, select **Add condition**.
 4. Under **Blocks**, you have the following options:
    - If you want to make sure that a condition is not verified for the automation to run, select  **+** on the **Not** block.
    - If you will add more than one condition, you can select:
