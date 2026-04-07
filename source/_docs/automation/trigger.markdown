@@ -10,7 +10,7 @@ Triggers are what starts the processing of an {% term automation %} rule. When _
 
 An {% term automation %} can be triggered by an {% term event %}, a certain {% term entity %} {% term state %}, at a given time, and more. These can be specified directly or more flexible via templates. It is also possible to specify multiple triggers for one automation.
 
-- [Elements of a trigger in the YAML file](#elements-of-a-trigger-in-the-yaml-file)
+- [Elements of a trigger in YAML](#elements-of-a-trigger-in-yaml)
   - [Trigger ID](#trigger-id)
     - [Video tutorial](#video-tutorial)
   - [Trigger variables](#trigger-variables)
@@ -75,9 +75,9 @@ An {% term automation %} can be triggered by an {% term event %}, a certain {% t
 - [Disabling a trigger](#disabling-a-trigger)
 - [Merging lists of triggers](#merging-lists-of-triggers)
 
-## Elements of a trigger in the YAML file
+## Elements of a trigger in YAML
 
-The main elements of a trigger that are defined in the YAML file are:
+The main elements of a trigger that are defined in the `configuration.yaml` file are:
 
 - trigger ID
 - trigger variables.
