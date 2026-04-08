@@ -30,21 +30,12 @@ A person arriving home can be tracked in Home Assistant using {% term devices %}
 
 ### Condition
 
-The second part is the [condition](/docs/automation/condition/). Conditions are optional tests that can limit an automation to only work in your specific use cases. A condition will test against the current state of the system. This includes the current time, devices, people and other things like the sun. In this case, we only want to act when the sun has set.
+The second part of an automation is the [condition](/docs/automation/condition/). Conditions are optional tests that can limit an automation to only work in your specific use cases. A condition will test against the current state of the system. This includes the current time, devices, people and other things like the sun. In this case, we only want to act when the sun has set.
 
 In the example of the automation above, the condition _and it is after sunset_ has:
 
 - the implicit target: _time_.
 - the event: _is after sunset_.
-
-### Action
-
-The third part is the [action](/docs/automation/action/), which will be performed when an automation is triggered and all conditions are met. For example, it can turn a light on, set the temperature on your thermostat or activate a scene. An automation must have an action and can have more than one.
-
-In the example of the automation above, the action _Turn the lights on in the living room_ has:
-
-- the target: _lights in the living room_.
-- the event: _turn on_.
 
 {% note %}
 The difference between a trigger and a condition can be confusing as they are very similar.
@@ -56,6 +47,15 @@ Condition: After Sunset? \
 Action: Turn lights on
 
 {% endnote %}
+
+### Action
+
+The last part of an automation is the [action](/docs/automation/action/), which will be performed when an automation is triggered and all conditions are met. For example, it can turn a light on, set the temperature on your thermostat or activate a scene. An automation must have an action and can have more than one.
+
+In the example of the automation above, the action _Turn the lights on in the living room_ has:
+
+- the target: _lights in the living room_.
+- the event: _turn on_.
 
 ## Exploring the internal state
 
