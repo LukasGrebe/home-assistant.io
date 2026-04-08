@@ -75,7 +75,7 @@ To explore the available _actions_, open the {% my developer_services title="**S
 
 Now that you've got a sneak peek of what is possible, it's time to get your feet wet and create your first automation.
 
-### [Creating automations without the new Labs features &raquo;](/docs/automation/editor/)
+By default, to create automations, use the [automation editor](/docs/automation/editor/).
 
 ### Creating automations with the new Labs features
 
