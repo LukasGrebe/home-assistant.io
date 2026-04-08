@@ -63,9 +63,9 @@ Automations interact directly with the internal state of Home Assistant, so you'
 
 | Name | Description | Example |
 | ---- | ----- | ---- |
-| Entity ID | Unique identifier for the entity. | `light.living_room`
-| State | The current state of the device. | `off`
-| Attributes | Extra data related to the device and/or current state. | `brightness`
+| Entity ID | Unique identifier for the entity. | `light.living_room` |
+| State | The current state of the device. | `off` |
+| Attributes | Extra data related to the device and/or current state. | `brightness` |
 
 State changes can be used as the source of triggers and the current state can be used in conditions.
 
