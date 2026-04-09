@@ -12,7 +12,7 @@ An {% term automation %} can be triggered by an {% term event %}, a certain {% t
 
 - [Elements of a trigger in YAML](#elements-of-a-trigger-in-yaml)
   - [Trigger ID](#trigger-id)
-    - [Video tutorial](#video-tutorial)
+    - [YAML example](#yaml-example)
   - [Trigger variables](#trigger-variables)
 - [Types of triggers](#types-of-triggers)
   - [Button trigger](#button-trigger)
@@ -74,6 +74,7 @@ An {% term automation %} can be triggered by an {% term event %}, a certain {% t
 - [Multiple entity IDs for the same trigger](#multiple-entity-ids-for-the-same-trigger)
 - [Disabling a trigger](#disabling-a-trigger)
 - [Merging lists of triggers](#merging-lists-of-triggers)
+- [Creating an automation with actions that depend on different triggers](#creating-an-automation-with-actions-that-depend-on-different-triggers)
 
 ## Elements of a trigger in YAML
 
@@ -86,11 +87,9 @@ The main elements of a trigger that are defined in the `configuration.yaml` file
 
 All triggers can be assigned an optional `id`. If the ID is omitted, it will instead be set to the index of the trigger. The `id` can be referenced from [trigger conditions and actions](/docs/scripts/conditions/#trigger-condition). The `id` does not have to be unique for each trigger, and it can be used to group similar triggers for use later in the automation (such as several triggers of different types that should all turn some entity on).
 
-#### Video tutorial
+Trigger IDs also allow you to set up an automation with many actions, each action depending on a different trigger. An action will be connected to a trigger through the trigger ID and fires only if that trigger is verified. To know how to create an automation using trigger IDs, refer to [Creating an automation with actions that depend on different triggers](/docs/automation/trigger/#creating-an-automation-with-actions-that-depend-on-different-triggers).
 
-This video tutorial explains how trigger IDs work.
-
-<lite-youtube videoid="fE_MYcXYwMI" videotitle="How to use Trigger IDs in Home Assistant - Tutorial" posterquality="maxresdefault"></lite-youtube>
+#### YAML example
 
 ```yaml
 automation:
@@ -1442,3 +1441,20 @@ triggers:
 ```
 
 This blueprint automation can then be triggered either by the fixed manual_event trigger, or additionally by any triggers selected in the trigger selector. This is also applicable for `wait_for_trigger` action.
+
+## Creating an automation with actions that depend on different triggers
+
+{% include integrations/labs_entity_triggers_note.md %}
+
+Instead of creating many automations for different groups of related triggers and actions, you can build a single automation in the visual editor of the UI by following the steps below.
+
+1. Go to **Settings** > **Automations & scenes**.
+2. In the lower right corner, select **Create automation** > **Create new automation**.
+3. In the **When** section, select **Add trigger**.
+4. In the trigger window on the right, edit the **Trigger ID** by going to the three dots {% icon "mdi:dots-vertical" %} menu > **Edit ID**.
+5. In the **Then do** section, select **Add action**, and then select the **Choose** block.
+6. Expand the option section, select **Add condition** and, in the **By type** list, select **Triggered by**.
+7. In the condition window on the right, select the trigger ID that you added in step 1.
+8. In the option section, select **Add action** and choose the action that will be fired by the related trigger.
+9. You can add more conditions and actions to that option by repeating the steps 6 to 8.
+10. Repeat the previous steps to add another trigger and related option for the new condition and action.
