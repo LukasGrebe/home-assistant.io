@@ -162,7 +162,9 @@ conditions:
       state: disarmed
 ```
 
-## Numeric state condition
+## Types of conditions
+
+### Numeric state condition
 
 This type of condition attempts to parse the state of the specified entity or the attribute of an entity as a number, and triggers if the value matches the thresholds (strictly below/above, so equal excluded).
 
@@ -230,7 +232,7 @@ conditions:
     below: input_number.temperature_threshold_high
 ```
 
-## State condition
+### State condition
 
 Tests if an entity has a specified state.
 
@@ -360,7 +362,7 @@ conditions:
     state: "below_horizon"
 ```
 
-### Sun elevation condition
+#### Sun elevation condition
 
 The sun elevation can be used to test if the sun has set or risen, it is dusk, or it is night when a trigger occurs.
 For an in-depth explanation of sun elevation, see [sun elevation trigger][sun_elevation_trigger].
@@ -391,7 +393,7 @@ conditions:
 
 {% endraw %}
 
-### Sunset/sunrise condition
+#### Sunset/sunrise condition
 
 The sun condition can also test if the sun has already set or risen when a trigger occurs. The `before` and `after` keys can only be set to `sunset` or `sunrise`. They have a corresponding optional offset value (`before_offset`, `after_offset`) that can be added, similar to the [sun trigger][sun_trigger].
 
@@ -433,7 +435,7 @@ A visual timeline is provided below, showing an example of when these conditions
 
 ![Graphic showing an example of sun conditions](/images/docs/scripts/sun-conditions.svg)
 
-## Template condition
+### Template condition
 
 The template condition tests if the [given template][template] renders a value equal to true. This is achieved by having the template result in a true boolean expression or by having the template render `True`.
 
@@ -450,7 +452,7 @@ conditions:
 
 Within an automation, template conditions also have access to the `trigger` variable as [described here][automation-templating].
 
-### Template condition shorthand notation
+#### Template condition shorthand notation
 
 The template condition has a shorthand notation that can be used to make your scripts and automations shorter.
 
@@ -534,7 +536,7 @@ It's also supported in script or automation `condition` actions:
 [template]: /docs/configuration/templating/
 [automation-templating]: /getting-started/automation-templating/
 
-## Time condition
+### Time condition
 
 The time condition can test if it is after a specified time, before a specified time or if it is a certain day of the week.
 
@@ -585,7 +587,7 @@ a referenced sensor or helper entity contains a timestamp with a date, the
 date part is fully ignored.
 {% endnote %}
 
-## Trigger condition
+### Trigger condition
 
 The trigger condition can test if an automation was triggered by a certain trigger, identified by the trigger's `id`.
 
@@ -618,7 +620,7 @@ conditions:
       - event_2_trigger
 ```
 
-## Zone condition
+### Zone condition
 
 Zone conditions test if an entity is in a certain zone. For zone automation to work, you need to have set up a device tracker platform that supports reporting GPS coordinates.
 
@@ -669,7 +671,7 @@ conditions:
     - zone.work
 ```
 
-## Entity conditions
+### Entity conditions
 
 Entity conditions, also called *purpose-specific conditions*, let you check entity state using meaningful terminology specific to that entity's domain. Instead of writing a [state condition](#state-condition) to check whether a state value equals a specific string, you can simply ask "If the climate is heating" or "If the lock is locked". This makes your automations much easier to read and understand, both when building them and when reviewing them later.
 
@@ -707,7 +709,7 @@ The following condition types are available per domain:
 - **Switch** (`condition: switch`): Check if a switch `is_on` or `is_off`.
 - **Vacuum** (`condition: vacuum`): Check if a vacuum `is_cleaning`, `is_docked`, `is_paused`, `is_returning`, or `is_encountering_an_error`. See [Vacuum conditions](/integrations/vacuum/#conditions).
 
-### Example: Continue only if the climate is heating
+#### Example: Continue only if the climate is heating
 
 ```yaml
 conditions:
@@ -716,7 +718,7 @@ conditions:
     entity_id: climate.living_room
 ```
 
-### Example: Continue only if the living room light is on
+#### Example: Continue only if the living room light is on
 
 ```yaml
 conditions:
