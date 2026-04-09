@@ -164,6 +164,33 @@ conditions:
 
 ## Types of conditions
 
+A condition of an automation has a type that depends on the target of the condition. The following types are available.
+
+### Alarm control panel condition
+
+In YAML, use `condition: alarm_control_panel`.
+
+Checks if the alarm is in one of the following states:
+
+- `is_armed`
+- `is_armed_home`
+- `is_armed_away`
+- `is_armed_night`
+- `is_armed_vacation`
+- `is_disarmed`
+- `is_triggered`
+
+### Assist satellite condition
+
+In YAML, use `condition: assist_satellite`.
+
+Checks if your voice assistant satellite is in one of the following states:
+
+- `is_idle`
+- `is_listening`
+- `is_processing`
+- `is_responding`
+
 ### Numeric state condition
 
 This type of condition attempts to parse the state of the specified entity or the attribute of an entity as a number, and triggers if the value matches the thresholds (strictly below/above, so equal excluded).
@@ -694,8 +721,6 @@ Entities in the `unavailable` or `unknown` state are excluded from the condition
 
 The following condition types are available per domain:
 
-- **Alarm control panel** (`condition: alarm_control_panel`): Check if the alarm is in a specific state: `is_armed_home`, `is_armed_away`, `is_armed_night`, `is_armed_vacation`, `is_disarmed`, or `is_triggered`.
-- **Assist satellite** (`condition: assist_satellite`): Check if your voice assistant satellite is `is_idle`, `is_listening`, `is_processing`, or `is_responding`.
 - **Climate** (`condition: climate`): Check if a climate device `is_on`, `is_off`, `is_heating`, `is_cooling`, or `is_drying`. See [Climate conditions](/integrations/climate/#conditions).
 - **Device tracker** (`condition: device_tracker`): Check if a tracked device `is_home` or `is_not_home`. See [Device tracker conditions](/integrations/device_tracker/#conditions).
 - **Fan** (`condition: fan`): Check if a fan `is_on` or `is_off`. See [Fan conditions](/integrations/fan/#conditions).
