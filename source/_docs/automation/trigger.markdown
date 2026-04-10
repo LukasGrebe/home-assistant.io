@@ -134,7 +134,7 @@ automation:
 
 ## Types of triggers
 
-Each trigger has a type that depends on the target of the trigger. The following types are available.
+Each trigger has a type that depends on the target of the trigger, usually corresponding to the {% term domain %} of the target. The following types are available.
 
 ### Button trigger
 
