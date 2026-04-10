@@ -887,8 +887,6 @@ conditions:
 
 The `condition` key specifies the entity domain (such as `climate` or `light`), and `type` specifies the state to check for.
 
-Entities in the `unavailable` or `unknown` state are excluded from the condition check. With `behavior: any` (the default), the condition fails if all targeted entities are `unavailable` or `unknown`. With `behavior: all`, the condition passes if all targeted entities are `unavailable` or `unknown`, because there are no available entities left to fail the check.
-
 #### Example: Continue only if the climate is heating
 
 ```yaml
